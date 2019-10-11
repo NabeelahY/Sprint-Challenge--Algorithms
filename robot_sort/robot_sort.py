@@ -99,22 +99,29 @@ class SortingRobot:
         """
         Sort the robot's list.
         """
-        self.set_light_on()
+        # If robot cannot move right, leave the function (Base case)
+        if self.can_move_right() is False:
+            pass
+        # Else swap items
+        else:
+            self.swap_item()
+            # If robot can move right
+            while self.can_move_right():
+                # Robot should move to next position
+                self.move_right()
+                # compare item at hand to current item in list
+                self.compare_item()
+                # if item at hand is greater than current item in list
+                if self.compare_item() == 1:
+                    # swap items
+                    self.swap_item()
 
-        while self.light_is_on():
-            for i in range(self._position, len(self._list)):
-                self._item = self._list[0]
-                self.swap_item()
-                if self.can_move_right():
-                    self.compare_item()
-                    if self.compare_item() == 1:
-                        self.swap_item()
-                    else:
-                        self.move_right()
-                else:
-                    self.set_light_off()
+            while self.compare_item() is not None:
+                self.move_left()
+            self.swap_item()
+            self.move_right()
 
-        return self._list
+            return self.sort()
 
 
 if __name__ == "__main__":
