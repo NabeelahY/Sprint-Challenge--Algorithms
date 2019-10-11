@@ -6,24 +6,24 @@ Give an analysis of the running time of each snippet of
 pseudocode with respect to the input size n of each of the following:
 
 ```python
-a)  a = 0
-    while (a < n * n * n):
-      a = a + n * n
+a)  a = 0  #0(1)
+    while (a < n * n * n): #0(log n)
+      a = a + n * n  #0(1)
 ```
 
 
 ```
-b)  sum = 0
-    for i in range(n):
-      j = 1
-      while j < n:
-        j *= 2
-        sum += 1
+b)  sum = 0 #0(1)
+    for i in range(n): #0(n)
+      j = 1 #0(1)
+      while j < n: #0(n)
+        j *= 2 #0(1)
+        sum += 1 #0(1)
 ```
 
 ```
 c)  def bunnyEars(bunnies):
-      if bunnies == 0:
+      if bunnies == 0: 
         return 0
 
       return 2 + bunnyEars(bunnies-1)
