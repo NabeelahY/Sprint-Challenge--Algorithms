@@ -2,7 +2,7 @@
 
 ## Exercise I
 
-a) 0(log n)
+a) 0(n ^ 3)
 
 
 b) O(n^2)
