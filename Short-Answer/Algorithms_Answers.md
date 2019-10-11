@@ -16,6 +16,6 @@ c) O(bunnies) => O(n)
 # loop through n as person is climbing to each floor
     # throw egg to determine if egg breaks on that floor
     # if egg does not break, proceed to next floor
-    # if egg breaks, return no of floor
+    # if egg breaks, return no of floor minus 1
 
 Time complexity = 0(n)
